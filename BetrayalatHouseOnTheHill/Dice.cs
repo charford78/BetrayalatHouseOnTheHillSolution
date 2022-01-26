@@ -16,12 +16,14 @@ namespace BetrayalatHouseOnTheHill
         }
 
 
-        public int DiceRoller()
+        public void DiceRoller(int dicenum)
         {
             var rnd = new Random();
-            var roll = rnd.Next(0, 6);
-            Console.WriteLine($"You rolled a {SideValues[roll]}");
-            return SideValues[roll];
+            for(int i = 1; i <= dicenum; i++)
+            {
+                var roll = rnd.Next(0, 6);
+                Console.WriteLine($"You rolled a {SideValues[roll]} on dice{i}.");
+            }
         }
     }
 }
